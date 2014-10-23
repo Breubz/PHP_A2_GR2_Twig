@@ -1,0 +1,16 @@
+{
+    "name": "breubz/php_a2_gr2_twig",
+    "description": "Rendu A2 GR2 Sem2 'cause YOLO",
+    "require": {
+        "twig/twig": "1.16.*",
+        "imagine/imagine": "0.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antoine EISELE",
+            "email": "Antoine_eisele@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
