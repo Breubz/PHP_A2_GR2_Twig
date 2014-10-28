@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @author Thibaud BARDIN (https://github.com/Irvyne).
@@ -18,4 +19,4 @@ if (!empty($_GET['id'])) {
 
 require __DIR__.'/_footer.php';
 
-include __DIR__.'/template/article.php';
+include __DIR__ . '/views/front/article.html.twig';

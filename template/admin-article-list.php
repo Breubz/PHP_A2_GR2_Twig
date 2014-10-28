@@ -20,7 +20,7 @@
 
     <?php foreach($articles as $article) { ?>
         <tr>
-            <td><a href="../article.php?id=<?php echo  $article['id']; ?>" target="_blank"><?php echo $article['id'];?></a></td>
+            <td><a href="../views/article.html.twig?id=<?php echo  $article['id']; ?>" target="_blank"><?php echo $article['id'];?></a></td>
             <td><?php echo getExcerpt($article['title'], 30);?></td>
             <td><?php echo getExcerpt($article['content'], 100);?></td>
             <td><img src="<?php echo $article['image'];?>" alt="<?php $article['title'];?>" width="50" height="35"></td>

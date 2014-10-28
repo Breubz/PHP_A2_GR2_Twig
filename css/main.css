@@ -17,6 +17,9 @@ article header img {
     max-height: 200px;
 }
 
+.articles {
+    margin-top: 5%;
+}
 article .content {
     margin: 25px 0;
 }

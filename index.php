@@ -21,6 +21,11 @@ if ($currentPage > $nbPages) {
 
 $articles = getArticles($link, null, ($currentPage-1)*$perPage, $perPage);
 
-include __DIR__.'/template/articles.php';
+echo $twig->render('articles.html.twig', [
+    'articles' => $articles,
+    'connected' => isConnected(),
+    'username' => 'Admin',
+
+]);
 
 require __DIR__.'/_footer.php';

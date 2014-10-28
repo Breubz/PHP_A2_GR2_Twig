@@ -8,7 +8,7 @@ foreach ($articles as $article) {
 
     echo '<article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">';
     echo '<header>';
-    echo '<h1><a href="/article.php?id='.$article['id'].'">'.$article['title'].'</a></h1>';
+    echo '<h1><a href="/views/article.html.twig?id=' .$article['id'].'">'.$article['title'].'</a></h1>';
     echo '<img title="'.$article['title'].'" alt="'.$article['title'].'" src="'.$article['image'].'">';
     echo '<small>Written by '.$article['user_id'].' on '.$article['created_at'].'</small>';
     echo '</header>';

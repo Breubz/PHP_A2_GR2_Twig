@@ -15,7 +15,7 @@
 
         <?php foreach($tags as $tag) { ?>
             <tr>
-                <td><a href="../article.php?id=<?php echo  $tag['id']; ?>" target="_blank"><?php echo $tag['id'];?></a></td>
+                <td><a href="../views/article.html.twig?id=<?php echo  $tag['id']; ?>" target="_blank"><?php echo $tag['id'];?></a></td>
                 <td><?php echo getExcerpt($tag['name'], 30);?></td>
                 <td><a href="admin-tag-edit.php?id=<?php echo $tag['id'];?>">Edit</a></td>
                 <td><a href="admin-tag-delete.php?id=<?php echo $tag['id'];?>">Delete</a></td>

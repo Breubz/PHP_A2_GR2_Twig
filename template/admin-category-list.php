@@ -16,7 +16,7 @@
 
     <?php foreach($categories as $category) { ?>
         <tr>
-            <td><a href="../article.php?id=<?php echo  $category['id']; ?>" target="_blank"><?php echo $category['id'];?></a></td>
+            <td><a href="../views/article.html.twig?id=<?php echo  $category['id']; ?>" target="_blank"><?php echo $category['id'];?></a></td>
             <td><?php echo getExcerpt($category['name'], 30);?></td>
             <td><img src="<?php echo $category['image'];?>" alt="<?php $category['name'];?>" width="50" height="35"></td>
             <td><a href="admin-category-edit.php?id=<?php echo $category['id'];?>">Edit</a></td>

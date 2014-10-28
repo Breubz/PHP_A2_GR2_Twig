@@ -16,7 +16,7 @@
 
         <?php foreach($users as $user) { ?>
             <tr>
-                <td><a href="../article.php?id=<?php echo  $user['id']; ?>" target="_blank"><?php echo $user['id'];?></a></td>
+                <td><a href="../views/article.html.twig?id=<?php echo  $user['id']; ?>" target="_blank"><?php echo $user['id'];?></a></td>
                 <td><?php echo $user['username'];?></td>
                 <td><?php echo ('ROLE_ADMIN' === $user['role']) ? '<span class="label label-primary">Admin</span>' : '<span class="label label-default">Default</span>';?></td>
                 <td><a href="admin-user-edit.php?id=<?php echo $user['id'];?>">Edit</a></td>
