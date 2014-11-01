@@ -1,18 +1,22 @@
 {% extends 'base.html.twig' %}
-    {% block OneContent %}
-        {% for article in articles %}
-            {% if article.enabled == true %}
-                <article>
-                    <header>
-                        <h1>{{ article.id }} - {{ article.title|upper }}</h1>
-                    </header>
-                    <p> {{ article.content }} </p>
-                    <footer>
-                        {% if article.created_at !='0000-00-00 00:00:00' %}
-                            <time datetime="{{ article.created_at|date('c') }}">{{ article.created_at|date('d-m-Y') }}</time>
-                        {% endif %}
-                    </footer>
-                </article>
-            {% endif %}
-        {% endfor %}
+    {% block LeftContent %}
+        <article class="col-md-8 col-md-offset-2 well">
+            <header>
+                <h1><a href="article.php?id={{ article.id }}">{{ article.title|upper }}</a></h1>
+                {% if article.image %}
+                    <img title="{{ article.title }}" alt="{{ article.title }}" src="{{ article.image }}">
+                {% endif %}
+            </header>
+            <p> {{ article.content }} </p>
+            <footer>
+                <small>Created :
+                    <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-y') }}</time>
+                    <p>Posted in category: <a href="article?id={{ article.category_id }}">{{ article.category_id }}</a>
+                    </p>
+
+                    <p><a href="tag?id={{ article.category_id }}"><span class="label label-primary">View More</span></a>
+                    </p></small>
+            </footer>
+        </article>
+
     {% endblock %}

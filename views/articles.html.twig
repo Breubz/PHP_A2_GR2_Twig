@@ -1,25 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    {{ parent() }} - My Articles
-{% endblock %}
 
 {% block leftContent %}
+    {%  set i = 0  %}
     {% for article in articles %}
-        {% if article.enabled == true %}
-            <div class="col-md-8 col-md-offset-2 well">
-            <article>
-                <header>
-                    <h1>{{ article.title|upper }}</h1>
-                </header>
-                <p> {{ article.content }} </p>
-                <footer>
-                    <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-y') }}</time>
-                </footer>
-            </article>
-            </div>
+        {% if (i%3 == 0) %}
+            <div class="row">
         {% endif %}
+        <article class="col-md-8 col-md-offset-2 well">
+            <header>
+                <h1><a href="article.php?id={{ article.id }}">{{ article.title|upper }}</a></h1>
+                {% if article.image %}
+                    <img title="{{ article.title }}" alt="{{ article.title }}" src="{{ article.image }}">
+                {% endif %}
+            </header>
+            <p> {{ article.content }} </p>
+            <footer>
+                <small>Created :
+                    <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-y') }}</time>
+                    <p>Posted in category: <a href="article?id={{ article.category_id }}">{{ article.category_id }}</a>
+                    </p>
+
+                    <p><a href="tag?id={{ article.category_id }}"><span class="label label-primary">View More</span></a>
+                    </p></small>
+            </footer>
+        </article>
+
+
+            {% if (i%3 == 2) %}
+                </div>
+            {% endif %}
+            {% set i = i+1 %}
     {% endfor %}
+
+<div class="pagination">
+    <ul class="pagination">
+        <li {% if 1 == currentPage %}class="disabled"{% endif %} ><a href="index.php?p={{ currentPage -1 }}">&leftarrow;</a></li>
+
+        {% for i in range(1, nbPages) %}
+            <li {% if i == currentPage %}class="active"{% endif %} ><a href="index.php?p={{ i }}">{{ i }}</a></li>
+        {% endfor %}
+
+        <li {% if nbPage == currentPage %}class="disabled"{% endif %}><a href="index.php?p={{ currentPage +1 }}">&rightarrow;</a></li>
+    </ul>
+</div>
 {% endblock %}
 
 

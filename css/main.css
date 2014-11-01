@@ -6,11 +6,11 @@ body .container > h1 {
     margin-bottom: 50px;
 }
 
-#pagination {
+.pagination {
     margin-top: 50px;
 }
 
-article header img {
+.article header img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -29,3 +29,4 @@ article .content {
     margin-top: 50px;
     background-color: rgba(0, 0, 0, 0.05);
 }
+
