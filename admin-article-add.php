@@ -6,6 +6,9 @@
 
 require __DIR__.'/_header-admin.php';
 
+$articles = getArticles($link);
+$categories = getCategories($link);
+$boolean = null;
 $errors = [];
 
 if (!empty($_POST) && isset($_POST['submitArticle'])) {
@@ -24,13 +27,20 @@ if (!empty($_POST) && isset($_POST['submitArticle'])) {
         $categoryId = (int) $_POST['category'];
         $tagsId = isset($_POST['tags']) ? $_POST['tags'] : null;
 
-        var_dump($_FILES['image']);
+       // var_dump($_FILES['image']);
 
         $boolean = addArticle($link, $title, $content, $enabled, $image, $categoryId, 1, $tagsId);
-        var_dump($boolean);
     }
+
 }
 
-include __DIR__.'/template/admin-article-add.php';
+echo $twig ->render('admin-article-add.html.twig',[
+    'articles' => $articles,
+    'connected' => isConnected(),
+    'username' => $_SESSION['username'],
+    'boolean' => $boolean,
+
+]);
+
 
 require __DIR__.'/_footer.php';

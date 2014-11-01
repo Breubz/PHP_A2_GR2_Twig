@@ -7,6 +7,8 @@
 require __DIR__.'/_header-admin.php';
 
 $articles = getArticles($link);
+$categories = getCategories($link);
+
 
 echo $twig ->render('admin-article-list.html.twig',[
     'articles' => $articles,

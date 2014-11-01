@@ -46,6 +46,7 @@
                         <li><a href="/admin-article-add.php"><span class="glyphicon glyphicon-plus-sign"></span> Add Article</a></li>
                         <li class="divider"></li>
                         <?php if (true === isAdmin()) { ?>
+                        <!--
                         <li class="dropdown-header">Categories</li>
                         <li><a href="/admin-category-list.php"><span class="glyphicon glyphicon-list-alt"></span> List Categories</a></li>
                         <li><a href="/admin-category-add.php"><span class="glyphicon glyphicon-plus-sign"></span> Add Category</a></li>
@@ -57,6 +58,7 @@
                         <li class="dropdown-header">Users</li>
                         <li><a href="/admin-user-list.php"><span class="glyphicon glyphicon-list-alt"></span> List Users</a></li>
                         <li><a href="/admin-user-add.php"><span class="glyphicon glyphicon-plus-sign"></span> Add User</a></li>
+                        -->
                         <?php } ?>
                     </ul>
                 </li>
