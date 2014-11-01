@@ -66,7 +66,7 @@
                 {% if connected is defined and connected %}
                 <li><a href="#">Welcome {{ username }}!</a></li>
                 <li><a href="logout.php">Logout</a></li>
-                <{% else %}
+                {% else %}
                 <li><a href="login.php">Login</a></li>
                 {% endif %}
             </ul>

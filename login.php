@@ -9,6 +9,7 @@ require __DIR__.'/_header.php';
 if (isConnected()) {
     header('Location: index.php');
 }
+
 $missing_credential = false;
 $credential_error = false;
 $username = false;
@@ -35,7 +36,5 @@ echo $twig ->render('login.html.twig',[
     'credential_error' => $credential_error,
     'missing_credential' => $missing_credential,
 ]);
-
-
 
 require __DIR__.'/_footer.php';

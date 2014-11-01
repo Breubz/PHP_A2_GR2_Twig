@@ -8,6 +8,10 @@ require __DIR__.'/_header-admin.php';
 
 $articles = getArticles($link);
 
-include __DIR__.'/template/admin-article-list.php';
+echo $twig ->render('admin-article-list.html.twig',[
+    'articles' => $articles,
+    'connected' => isConnected(),
+    'username' => $_SESSION['username'],
+]);
 
 require __DIR__.'/_footer.php';
