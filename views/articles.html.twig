@@ -7,6 +7,7 @@
 {% block leftContent %}
     {% for article in articles %}
         {% if article.enabled == true %}
+            <div class="col-md-8 col-md-offset-2 well">
             <article>
                 <header>
                     <h1>{{ article.title|upper }}</h1>
@@ -15,6 +16,8 @@
                 <footer>
                     <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-y') }}</time>
                 </footer>
+            </article>
+            </div>
         {% endif %}
     {% endfor %}
 {% endblock %}
